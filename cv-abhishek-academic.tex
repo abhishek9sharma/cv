@@ -1,0 +1,639 @@
+% Dr. Geoff Boeing - Curriculum Vitae
+% Copyright 2018 Geoff Boeing
+% Email: g.boeing@northeastern.edu
+% Web: https://geoffboeing.com/
+
+%\documentclass[12pt,letterpaper]{report}
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) so accented characters are a single glyph
+\usepackage[utf8]{inputenc} % allow input of utf-8 encoded characters
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\usepackage[USenglish]{babel} % automatically regionalize hyphens, quote marks, etc
+\usepackage{microtype} % improves text appearance with kerning, etc
+\usepackage{datetime} % enable formatting of date output
+\usepackage{tabto} % make nice tabbing
+%\usepackage{hyperref} % enable hyperlinks and pdf metadata
+\usepackage{geometry} % manually set page margins
+\usepackage{enumitem} % enumerate with [resume] option
+\usepackage{titlesec} % allow custom section fonts
+
+\usepackage{bibentry}
+\makeatletter\let\saved@bibitem\@bibitem\makeatother
+\usepackage{hyperref}
+\makeatletter\let\@bibitem\saved@bibitem\makeatother
+
+%\usepackage{apacite} % to add publications from bib
+%\usepackage{bibentry}
+%\makeatletter\let\saved@bibitem\@bibitem\makeatother
+%\usepackage[colorlinks=true]{hyperref}
+%\makeatletter\let\@bibitem\saved@bibitem\makeatother
+
+
+% hanging publications: 1st line starts at beginning of line, 
+% further lines are placed a bit to the right
+%\usepackage{hanging}
+%\newcommand\publication[1]{%
+%	\smallskip\par\hangpara{1.5em}{1}\bibentry{#1}\smallskip
+%}
+
+
+% what is your name?
+\newcommand{\myname}{Abhishek Sharma}
+
+% define a default font face and set it as the body font
+\usepackage{crimson} % document's serif font
+\usepackage{helvet}  % document's sans serif font
+
+% define how far to tab for list items with left-aligned date - different font faces need different widths
+\newcommand{\listtabwidth}{1.75cm}
+
+% set name font to title the document
+\newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
+
+% set section heading fonts and before/after spacing
+\SetTracking{encoding=*}{20}
+\titleformat{\section}{\sffamily\small\bfseries\lsstyle\uppercase}{}{}{}{}
+\titlespacing{\section}{0pt}{24pt plus 4pt minus 2pt}{12pt plus 2pt minus 2pt}
+
+% set subsection heading fonts and before/after spacing
+\titleformat{\subsection}{\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\subsection}{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
+
+% set page margins
+\geometry{body={6.5in, 8.0in},
+		  left=1.0in,
+		  top=1in}
+
+% prevent paragraph indentation
+\setlength\parindent{0em}
+
+% define space between list items
+\newcommand{\listitemspace}{0.15em}
+
+% make unordered lists without bullets and use compact spacing
+\renewenvironment{itemize}
+{\begin{list}{}{\setlength{\leftmargin}{0em}
+				\setlength{\parskip}{0em}
+				\setlength{\itemsep}{\listitemspace}
+				\setlength{\parsep}{\listitemspace}}}
+{\end{list}}
+
+% make tabbed lists so content is left-aligned next to years
+\TabPositions{\listtabwidth}
+\newlist{tablist}{description}{3}
+\setlist[tablist]{leftmargin=\listtabwidth,
+	labelindent=0em,
+	topsep=0em,
+	partopsep=0em,
+	itemsep=\listitemspace,
+	parsep=\listitemspace,
+	font=\normalfont}
+
+% print the month and year only when using \today
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+% define hyperlink appearance and metadata for pdf properties
+\hypersetup{
+	colorlinks = true,
+	urlcolor = black,
+	pdfauthor = {\myname},
+	pdfkeywords = {city planning, urban design, spatial data science, street networks, housing},
+	pdftitle = {\myname: Curriculum Vitae},
+	pdfsubject = {Curriculum Vitae},
+	pdfpagemode = UseNone
+}
+
+\begin{document}
+
+\raggedright
+
+% display name as the document title
+\namefont{\myname}
+
+% contact info
+\vspace{1em}
+\begin{minipage}[t]{0.495\textwidth}
+Ph.D. Candidate\\
+  School of Information Systems\\
+Singapore Management University \\
+Singapore\\
+%\\
+%Web: https://abhishek9sharma.github.io/
+\end{minipage}
+\input{personalcontact}
+\vspace{0.5em}
+
+
+
+\section*{Education}
+
+\begin{tablist}
+	
+\item[Ph.D.] \tab School of Information Systems, Singapore Management University, 2018 (Expected) \\
+                  Dissertation Title: \textit{Social Software Development: Insights and Solutions} \\
+                  
+%                  Committee Members (\textit{internal}):  David Lo (chair), Jing Jiang, Hady W. Lauw\\
+%				  \hspace{3.6cm}(\textit{external}): Nachiappan Nagappan, Microsoft Research
+                 
+%\item[M.S.]  \tab Information Management, Arizona State University, 2006
+
+\item[B.Tech.]  \tab Computer Science \& Engineering , National Institute of Technology,  Hamirpur, India, 2008
+
+\end{tablist}
+
+
+
+%\section*{Academic Appointments}
+%
+%\begin{tablist}                     
+%
+%\item[2018--]   \tab Northeastern University \\
+%				Assistant Professor, School of Public Policy and Urban Affairs \\
+%		        Faculty Affiliate, Network Science Institute \\
+%		        Faculty Affiliate, Global Resilience Institute \\
+%		        Core Faculty, NULab for Texts, Maps, and Networks
+%			    
+%
+%\item[2017--18] \tab University of California, Berkeley \\
+%				Postdoctoral Scholar, Department of City and Regional Planning
+              
+
+%\end{tablist}
+
+
+
+\section*{Research Interests}
+
+\begin{itemize}
+	
+\item Software Analytics (Text, Socio-Technical Network)
+\item Mining Software Repositories
+\item Empirical Software Engineering
+\item Social Network Mining and Analysis
+
+
+\end{itemize}
+
+
+
+\section*{Publications}
+\nobibliography{cv-abhishek-academic}
+%\nocite{*}
+%%\bibliography{cv-abhishek-academic}
+\bibliographystyle{unsrt}
+
+%\bibliographystyle{apacite}
+%\vspace{-6cm}
+\subsection*{Peer-Reviewed Journal Articles}
+% \begin{enumerate}
+% 	\item [2018] \tab  \bibentry{sharma2018recexperts}
+% \end{enumerate}
+
+
+\begin{tablist}
+	\item [2018] \tab \bibentry{sharma2018recexperts}
+%
+%
+%
+%%\item[2015] \tab Boeing, G. \enquote{Planarity and Street Network Representation in Urban Form Analysis.} \textit{Environment and Planning B: Urban Analytics and City Science}, in press.
+%
+%\item[2018] \tab\bibentry{sharma2015s}
+%
+%
+\end{tablist}
+
+
+\subsection*{Peer-Reviewed Conference Proceedings}
+
+\begin{tablist}
+%
+	\item [2017] \tab \bibentry{tian2017apibot}
+	\item [2017] \tab \bibentry{xia2017personality}	
+	\item [2017] \tab \bibentry{sharma2017cataloging}
+	\item [2017] \tab \bibentry{sharma2017harnessing}
+	\item [2016] \tab \bibentry{sulistya2016spiteful}
+	\item [2016] \tab \bibentry{sahoo2016temporal}
+	\item [2015] \tab \bibentry{sharma2015s}
+	\item [2015] \tab \bibentry{sharma2015nirmal}
+%	
+%	\item[2018] \tab Boeing, G. \enquote{The Relative Circuity of Walkable and Drivable Urban Street Networks.} Transportation Research Board 97\textsuperscript{th} Annual Meeting. Washington, DC.
+%
+%%\item[2015] \tab 			    \bibentry{sharma2015s}
+%%\item[2015] \tab 			    \bibentry{sharma2015nirmal}
+%
+\end{tablist}
+
+
+%\subsection*{Conference Presentations}
+%
+%Presenting author \textit{italicized}, if other.\bigskip
+%% Asterisk* indicates paper published in \enquote{Peer-Reviewed Proceedings} above.
+%
+%\begin{tablist}
+%	
+%	\item[2019] \tab Abdelkader, A., G. Boeing, \textit{B.~T. Fasy}, D.~L. Millman. \enquote{Topological Distance Between Nonplanar Transportation Networks.} Joint Mathematics Meetings. Baltimore, Maryland. Jan 16--19.	
+%	
+%\end{tablist}
+
+
+
+\section*{Teaching Experience}
+
+\subsection*{Singapore Management University}
+
+\begin{itemize}
+	
+	\item IS111- \textit{Introduction to Programming} (Aug-Dec'2018 : Graduate Instructor)
+	
+	\item IS110- \textit{ Information Systems and Innovation} (Aug-Dec'2017: Graduate Teaching Assistant)
+	
+	\item IS201- \textit{Object Oriented Application Development} (Jan-April '2016 : Graduate Teaching Assistant)
+	
+\end{itemize}
+
+
+\section*{Service}
+
+\subsection*{Peer Reviewer (External)}
+
+\begin{itemize}
+	
+	\item \textit{International Symposium on Empirical Software Engineering and Measurement (ESEM)}
+	\item \textit{Evaluation and Assessment in Software Engineering (EASE)}
+	\item  \textit{Asia-Pacific Software Engineering Conference (APSEC)}	
+	\item  \textit{Working Conference on Source Code Analysis and Manipulation (SCAM)}		
+	\item  \textit{International Workshop on Software Analytics (SWAN)}
+	
+	
+\end{itemize}
+
+\subsection*{Program Committee Member}
+\begin{itemize}
+	\item \textit{Mining Software Repositories (MSR) 2018 Mining Challenge}
+\end{itemize}
+
+\section*{Professional Experience}
+
+
+\begin{tablist}
+	
+	\item[Jan,2011 - July,2014] \tab Accenture, \textit{Analyst Programmer}, Bengaluru (India); Liverpool/Horsham (UK)
+	
+	\item[Jan,2011 - July,2014] \tab Accenture, \textit{Senior Programmer}, Bengaluru (India)
+	
+	
+	\item[Oct,2008 - Jan,2011] \tab Tata Consultancy Services Ltd., \textit{Assistant Systems Engineer}, Gurgaon (India)
+	
+\end{tablist}
+
+\subsection*{International Experience}
+
+\begin{itemize}
+	
+	\item I have previously worked professionally in the India and United Kingdom.
+	
+\end{itemize}
+
+
+
+% display today's date as Month Year after a vertical space below the end of the text
+\begin{center}
+	\vspace{6em}
+	%\vfill
+	Updated \monthyeardate\today
+\end{center}
+
+%\subsection*{Journal Article Manuscripts Under Review}
+%
+%\begin{tablist}
+%
+%\item[\the\year] \tab Boeing, G. \enquote{Online Rental Housing Market Representation and the Digital Reproduction of Urban Inequality.} Revise and resubmit at \textit{Urban Studies}.
+%
+%\item[\the\year] \tab Boeing, G. \enquote{Street Networks and Measures for Every US City, County, Urbanized Area, Census Tract, and Zillow Neighborhood.} Under review at \textit{Scientific Data}.
+%
+%\item[\the\year] \tab Boeing, G. \enquote{Urban Spatial Order: Street Network Orientation, Configuration, and Entropy.} Under review at \textit{Journal of Transport Geography}.
+%
+%\item[\the\year] \tab Boeing, G., J. Wegmann, and J. Jiao. \enquote{Rental Housing Spot Markets: How Online Information Exchanges Can Supplement Transacted-Rents Data.} Under review at \textit{Journal of Planning Education and Research}.
+%
+%\item[\the\year] \tab Waddell, P., I. Garcia-Dorado, S. Maurer, G. Boeing, M. Gardner, E. Porter, D. Aliaga. \enquote{Architecture for Modular Microsimulation of Real Estate Markets and Transportation.} Under review at \textit{Transportation Research Record}.
+%
+%\end{tablist}
+
+
+
+%\subsection*{Peer-Reviewed Book Chapters}
+%
+%\begin{tablist}
+%
+%\item[2018] \tab Boeing, G. \enquote{The Morphology and Circuity of Walkable and Drivable Street Networks.} In: \textit{Mathematics of Urban Morphology} (forthcoming), edited by L. D'Acci. Cham, Switzerland: Birkhäuser.
+%
+%\item[2017] \tab Barajas, J.~M., G. Boeing, and J. Wartell. \enquote{Neighborhood Change, One Pint at a Time: The Impact of Local Characteristics on Craft Breweries.} In: \textit{Untapped: Exploring the Cultural Dimensions of Craft Beer} (pp. 155--176), edited by N.~G. Chapman, J.~S. Lellock, and C.~D. Lippard. Morgantown, WV: West Virginia University Press.
+%
+%\end{tablist}
+
+
+
+
+%\subsection*{Edited Articles and Reviews}
+%
+%\begin{tablist}
+%	
+%\item[2018] \tab Boeing, G. \enquote{Estimating Local Daytime Population Density from Census and Payroll Data.} \textit{Regional Studies, Regional Science}, 5 (1), 179--182.
+%
+%\item[2018] \tab Boeing, G. \enquote{Automated Street Network Analysis for Urban Planners with OSMnx.} \textit{Planning and Technology Today} 117 (Spring), 10--11.
+%	
+%\item[2017] \tab Boeing, G. \enquote{A Review of the Structure and Dynamics of Cities: Urban Data Analysis and Theoretical Modeling.} \textit{Journal of the American Planning Association} 83 (4), 418.
+%	
+%\item[2017] \tab Boeing, G. \enquote{Understanding Cities through Networks and Flows.} \textit{Berkeley Planning Journal} 28 (1), 118--123.
+%
+%\item[2016] \tab Boeing, G. \enquote{How Our Neighborhoods Lost Food, and How They Can Get It Back.} \textit{Progressive Planning} 206 (Winter), 35--37.
+%	
+%\end{tablist}
+
+
+
+%\subsection*{Reports and Working Papers}
+%
+%\begin{tablist}
+%
+%\item[2018] \tab Waddell, P., G. Boeing, M. Gardner, and E. Porter. \enquote{An Integrated Pipeline Architecture for Modeling Urban Land Use, Travel Demand, and Traffic Assignment.} US Department of Energy SMART Mobility Urban Science Pillar: Coupling Land Use Models and Network Flow Models. Technical report.
+%	
+%\end{tablist}
+
+
+
+%\subsection*{Patents}
+%
+%\begin{tablist}
+%
+%\item[2014] \tab Beck, A.~E., G. Boeing, and D. Shannon. \textit{Systems and Methods for Analyzing Requirements}. United States patent US8650186B2, European patent EP2413256, Australian patent AU2011204935, Canadian patent CA2747481, Chinese patent CN102346763.
+%
+%\end{tablist}
+
+
+
+%\subsection*{Manuscripts in Preparation}
+%
+%\begin{tablist}
+%
+%\item[\the\year] \tab Boeing, G., R. Goodspeed, and W. Zhang. \enquote{The Landscape of Urban Informatics.} Target: \textit{Journal of the American Planning Association}, Fall 2018.
+%
+%\item[\the\year] \tab Boeing, G., M. Besbris, A. Schacter, J. Kuk. \enquote{Technology Platforms, Information Sharing, and the Shaping of Housing Markets.} Target: \textit{Planning Theory \& Practice} (Interface on the sharing economy), Fall 2019.
+%
+%\item[\the\year] \tab Boeing, G. \enquote{The Spatial Ordering Logic of Urban Street Patterns.} Target: \textit{International Journal of Information Management}, Winter 2019.
+%
+%\item[\the\year] \tab Boeing, G., M. Besbris, A. Schachter, J. Kuk. \enquote{Information Asymmetries, Residential Sorting, and the Nature of Online Housing Markets.} Target: \textit{Housing Policy Debate} (special issue on smart cities), Spring 2019.
+%
+%\item[\the\year] \tab Boeing, G. \enquote{The Design and Evolution of the Grid in U.S. Urban Street Networks.} Target: \textit{Journal of Urban Design}, Summer 2019.
+%
+%\item[\the\year] \tab Boeing, G. \enquote{Off the Grid: The Evolution of American Street Network Planning.} Target: \textit{Journal of the American Planning Association}, Summer 2019.
+%
+%\item[\the\year] \tab Boeing, G. \enquote{Topological Inconsistencies in Planar and Nonplanar Graphs of Urban Street Networks.} Target: \textit{Computers, Environment and Urban Systems}, Fall 2019.
+%
+%\end{tablist}
+
+
+
+%\section*{Invited Talks}
+%
+%\begin{tablist}
+%
+%\item[2018] \tab \enquote{Computational Street Network Analysis in Urban Morphology.} Virginia Tech, Urban Computing Seminar Series. Arlington, Virginia. Dec 4.	
+%
+%
+%\end{tablist}
+
+%\subsection*{Campus Talks}
+%
+%\begin{tablist}
+%	
+%\item[2018] \tab \enquote{The Legibility of Urban Spatial Order in Computational Street Network Analysis.} NUVis: Northeastern University Visualization Consortium. Boston, Massachusetts. Oct 18.
+%	
+%\item[2017] \tab \enquote{Urban Street Network Analysis with OSMnx.} Geospatial Innovation Facility, College of Natural Resources, University of California, Berkeley. Berkeley, California. Oct 5.
+%
+%\end{tablist}
+
+
+%\section*{Conference Activity}
+%
+%\subsection*{Plenary Addresses}
+%
+%\begin{tablist}
+%
+%\item[2018] \tab \enquote{The Legible and the Illegible: Urban Science, City Design, and Human Circulation.} The Architect of the Future Conference. Moscow, Russia. Sep 10--11.
+%	
+%\end{tablist}
+%
+%\subsection*{Sessions Organized}
+%
+%\begin{tablist}
+%	
+%\item[2017] \tab \enquote{Emerging Computational Methods in Urban Design.} Association of Collegiate Schools of Planning Annual Conference (ACSP). Denver, Colorado. Oct 12--15.
+%	
+%\end{tablist}
+%
+%\subsection*{Conference Panels}
+%
+%\begin{tablist}
+%	
+%\item[2018] \tab \enquote{Who Benefits from \enquote{Smart City} Technologies? How Can They Be a Piece of the Puzzle Toward Social and Environmental Justice?} Panelist with Lisa Schweitzer, Ceasar McDowell, Clint Andrews, and Tom Sanchez; chaired by Mehdi Heris. Association of Collegiate Schools of Planning Annual Conference (ACSP). Buffalo, New York. Oct 25--28.
+%
+%\item[2017] \tab \enquote{Public Communication Strategies for Planning Academics.} Panelist with Jennifer Dill, Yingling Fan, and Justin Hollander; chaired by Carissa Slotterback. Association of Collegiate Schools of Planning Annual Conference (ACSP). Denver, Colorado. Oct 12--15.
+%
+%\end{tablist}
+%
+%\subsection*{Conference Respondent}
+%
+%\begin{tablist}
+%	
+%\item[2018] \tab Big Ideas Session on Civic Analytics and Urban Science with Luis Bettencourt, Marta González, and Sarah Williams. Association of Collegiate Schools of Planning Annual Conference (ACSP). Buffalo, New York. Oct 25--28.
+%	
+%\end{tablist}
+
+
+%\section*{Grants, Fellowships, Awards}
+%
+%
+%\begin{tablist}
+%
+%\item[2018] \tab The Public Good Projects research grant (\$200,000/2 years \textit{details being finalized}). Role: PI.
+%
+%
+%
+%\end{tablist}
+
+
+%
+%\subsection*{University of California, Berkeley}
+
+%\begin{itemize}
+%
+%\item Urban Informatics and Visualization (Fall '13, '14, '15, '16: grad student instructor, co-lead instructor)
+%
+%\end{itemize}
+%
+%\subsection*{Planetizen}
+%
+%\begin{itemize}
+%
+%\item Python for Planners; Data Analysis and Visualization for Planners; Geospatial Data Analysis; Street Network Analysis
+%
+%\end{itemize}
+
+
+
+
+%\subsection*{Service to Field}
+%
+%\begin{itemize}
+%	
+%\item Review and Appraisal Committee, Association of Collegiate Schools of Planning, 2018--
+%
+%\item Scientific Committee, Symposium on Simulation for Architecture and Urban Design, 2018--
+%
+%\item Book review editor, \textit{Berkeley Planning Journal}, 2013--14
+%	
+%\end{itemize}
+
+%\subsection*{Service to Department}
+%
+%\begin{itemize}
+%	
+%\item Ph.D. program faculty representative, UC Berkeley DCRP, 2015--16
+%
+%\item Ph.D. program admissions committee, UC Berkeley DCRP, 2015--16
+%
+%\end{itemize}
+
+
+
+%\section*{Professional Affiliations}
+%
+%\begin{itemize}
+%	
+%\item American Planning Association
+%
+%\item Association of Collegiate Schools of Planning
+%
+%\item Association of American Geographers
+%
+%\item Regional Studies Association
+%
+%\item Complex Systems Society
+%
+%\item New York Academy of Sciences
+%
+%\item Python Software Foundation
+%
+%\item Association for Computing Machinery
+%
+%\item Project Management Institute
+%
+%\end{itemize}
+
+
+
+%\section*{Credentials}
+%
+%\begin{itemize}
+%	
+%\item U.S. Department of Defense secret clearance
+%
+%\item U.S. Department of Homeland Security public trust
+%
+%\item Project Management Professional (PMP)
+%
+%\end{itemize}
+
+
+
+%\section*{Consulting Engagements}
+%
+%\begin{tablist}
+%
+%\item[2017--]   \tab The Public Good Projects	
+%
+%\item[2017--18] \tab Calthorpe Analytics
+%
+%\item[2016--18] \tab UrbanSim Inc.
+%
+%\item[2013--]   \tab Avalon Health Economics
+%
+%\item[2013]     \tab Raimi \& Associates
+%
+%\item[2009--13] \tab Accenture
+%
+%\end{tablist}
+
+
+
+
+
+%
+%\section*{Selected Media Coverage}
+%
+%Complete listing available at https://geoffboeing.com/press/ \bigskip
+%
+%\begin{tablist}
+%
+%\item 2018 \tab \textit{CityLab}. \enquote{Visualizing the Hidden Logic of Cities} Jul 26.
+%
+%\item 2018 \tab \textit{New Statesman CityMetric}. \enquote{Do British Cities Have Grid Systems? We Used Science to Find Out.} Jul 23.
+%
+%\item 2018 \tab \textit{99 Percent Invisible}. \enquote{On the Grid: Visualizing Street Network Orientations Across 50 Global Cities.} Jul 20.
+%
+%\item 2018 \tab \textit{Fast Company}. \enquote{How Crazy Is Your City's Plan?} Jul 16.
+%
+%\item 2018 \tab \textit{The Boston Globe}. \enquote{Boston's Streets Do Go in All Sorts of Directions.} Jul 12.
+%
+%\item 2018 \tab \textit{Slate}. \enquote{Elegant Graphs Reduce 25 American Cities to Their Design Essence.} Jul 11.	
+%
+%\item 2018 \tab \textit{Chicago Magazine}. \enquote{What Craigslist Can Tell Us About Rents in Chicago.} Jan 24.
+%	
+%\item 2017 \tab \textit{The San Francisco Chronicle}. \enquote{Stunning, Simple Maps Show San Francisco versus Other Global Cities.} Jun 19.
+%
+%\item 2017 \tab \textit{The Daily Mail}. \enquote{Square Mile Maps Reveal How Different the World's Cities Really Are.} Jun 9.
+%
+%\item 2017 \tab \textit{Forbes}. \enquote{Understanding Our Cities, Thanks to Beautiful Maps.} Feb 7.
+%
+%\item 2017 \tab \textit{Fast Company}. \enquote{Turn Your Local Streets into a Map That Reveals the Character of Your Neighborhood.} Feb 6.
+%
+%\item 2017 \tab \textit{Domus Magazine}. \enquote{Do-It-Yourself City Mapping.} Jan 23.
+%
+%\item 2017 \tab \textit{CityLab}. \enquote{A Digital Window into Your City's Urban Form.} Jan 17.
+%
+%\item 2017 \tab \textit{Discovery News}. \enquote{Compare City Street Grids One Square Mile at a Time.} Jan 9.
+%
+%\item 2016 \tab \textit{The Washington Post}. \enquote{What More Than 1 Million Craigslist Rental Listings Tell Us about the Housing Market.} Sep 1.
+%
+%\item 2016 \tab \textit{Fast Company}. \enquote{11 Million Craigslist Ads Show Which Cities Have the Highest Rents.} Sep 1.
+%
+%\item 2016 \tab \textit{NextCity}. \enquote{What 11 Million Craigslist Posts Show About Affordable Housing.} Aug 26.
+%
+%\end{tablist}
+%
+%
+%
+%\section*{Skills and Methods}
+%
+%\subsection*{Statistical and Computational Methods}
+%
+%\begin{itemize}
+%	
+%\item Computational statistics and machine learning, systems analysis, data mining, data wrangling, Python (including numpy, scipy, pandas, matplotlib, statsmodels, networkx, and scikit-learn), JavaScript, HTML, web scraping, MySQL, Postgres, and various other databases.
+%
+%\end{itemize}
+%
+%\subsection*{Geospatial Methods}
+%
+%\begin{itemize}
+%
+%\item Spatial analysis, network analysis, PostGIS, QGIS, ArcGIS, geopandas, Leaflet, CARTO, agent-based spatial modeling and microsimulation. I developed and maintain the OSMnx street network modeling software.
+%
+%\end{itemize}
+
+
+
+
+\end{document}
